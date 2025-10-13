@@ -1,0 +1,26 @@
+# Model Configuration
+model:
+  name: "XGBoost"
+  params:
+    n_estimators: 100
+    max_depth: 4
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+
+# Feature Engineering
+features:
+  lags: [1, 2, 3, 5]
+  rolling_windows: [5, 10, 20]
+  returns_lags: [1]
+
+# Validation
+validation:
+  n_splits: 5
+  test_size: 0.2
+
+# Data
+data:
+  date_col: "Date"
+  target_col: "Close"
